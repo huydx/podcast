@@ -7,7 +7,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/eduncan911/podcast"
+	"github.com/huydx/podcast"
 )
 
 func Example_httpHandlers() {
@@ -18,15 +18,15 @@ func Example_httpHandlers() {
 
 		// instantiate a new Podcast
 		p := podcast.New(
-			"eduncan911 Podcasts",
-			"http://eduncan911.com/",
+			"huydx Podcasts",
+			"http://huydx.com/",
 			"An example Podcast",
 			&pubDate, &updatedDate,
 		)
 
 		// add some channel properties
 		p.AddAuthor("Jane Doe", "me@janedoe.com")
-		p.AddAtomLink("http://eduncan911.com/feed.rss")
+		p.AddAtomLink("http://huydx.com/feed.rss")
 		p.AddImage("http://janedoe.com/i.jpg")
 		p.AddSummary(`link <a href="http://example.com">example.com</a>`)
 		p.IExplicit = "no"
@@ -75,20 +75,20 @@ func Example_httpHandlers() {
 	// <?xml version="1.0" encoding="UTF-8"?>
 	// <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
 	//   <channel>
-	//     <title>eduncan911 Podcasts</title>
-	//     <link>http://eduncan911.com/</link>
+	//     <title>huydx Podcasts</title>
+	//     <link>http://huydx.com/</link>
 	//     <description>An example Podcast</description>
-	//     <generator>go podcast v1.3.1 (github.com/eduncan911/podcast)</generator>
+	//     <generator>go podcast v1.3.1 (github.com/huydx/podcast)</generator>
 	//     <language>en-us</language>
 	//     <lastBuildDate>Mon, 06 Feb 2017 08:21:52 +0000</lastBuildDate>
 	//     <managingEditor>me@janedoe.com (Jane Doe)</managingEditor>
 	//     <pubDate>Sat, 04 Feb 2017 08:21:52 +0000</pubDate>
 	//     <image>
 	//       <url>http://janedoe.com/i.jpg</url>
-	//       <title>eduncan911 Podcasts</title>
-	//       <link>http://eduncan911.com/</link>
+	//       <title>huydx Podcasts</title>
+	//       <link>http://huydx.com/</link>
 	//     </image>
-	//     <atom:link href="http://eduncan911.com/feed.rss" rel="self" type="application/rss+xml"></atom:link>
+	//     <atom:link href="http://huydx.com/feed.rss" rel="self" type="application/rss+xml"></atom:link>
 	//     <itunes:author>me@janedoe.com (Jane Doe)</itunes:author>
 	//     <itunes:summary><![CDATA[link <a href="http://example.com">example.com</a>]]></itunes:summary>
 	//     <itunes:image href="http://janedoe.com/i.jpg"></itunes:image>
@@ -170,7 +170,7 @@ func Example_ioWriter() {
 	//     <title>Sample Podcasts</title>
 	//     <link>http://example.com/</link>
 	//     <description>An example Podcast</description>
-	//     <generator>go podcast v1.3.1 (github.com/eduncan911/podcast)</generator>
+	//     <generator>go podcast v1.3.1 (github.com/huydx/podcast)</generator>
 	//     <language>en-us</language>
 	//     <lastBuildDate>Mon, 06 Feb 2017 08:21:52 +0000</lastBuildDate>
 	//     <managingEditor>jane.doe@example.com (Jane Doe)</managingEditor>

@@ -1,21 +1,21 @@
-[![GoDoc](https://godoc.org/github.com/eduncan911/podcast?status.svg)](https://godoc.org/github.com/eduncan911/podcast)
-[![Build Status](https://github.com/eduncan911/podcast/workflows/go-cicd/badge.svg)](https://github.com/eduncan911/podcast/actions?workflow=go-cicd)
-[![Coverage Status](https://coveralls.io/repos/github/eduncan911/podcast/badge.svg?branch=master)](https://coveralls.io/github/eduncan911/podcast?branch=master)
-[![Go Report Card](https://goreportcard.com/badge/github.com/eduncan911/podcast)](https://goreportcard.com/report/github.com/eduncan911/podcast)
-[![MIT License](https://img.shields.io/npm/l/mediaelement.svg)](https://eduncan911.mit-license.org/)
+[![GoDoc](https://godoc.org/github.com/huydx/podcast?status.svg)](https://godoc.org/github.com/huydx/podcast)
+[![Build Status](https://github.com/huydx/podcast/workflows/go-cicd/badge.svg)](https://github.com/huydx/podcast/actions?workflow=go-cicd)
+[![Coverage Status](https://coveralls.io/repos/github/huydx/podcast/badge.svg?branch=master)](https://coveralls.io/github/huydx/podcast?branch=master)
+[![Go Report Card](https://goreportcard.com/badge/github.com/huydx/podcast)](https://goreportcard.com/report/github.com/huydx/podcast)
+[![MIT License](https://img.shields.io/npm/l/mediaelement.svg)](https://huydx.mit-license.org/)
 
 # podcast
 Package podcast generates a fully compliant iTunes and RSS 2.0 podcast feed
 for GoLang using a simple API.
 
-Full documentation with detailed examples located at <a href="https://godoc.org/github.com/eduncan911/podcast">https://godoc.org/github.com/eduncan911/podcast</a>
+Full documentation with detailed examples located at <a href="https://godoc.org/github.com/huydx/podcast">https://godoc.org/github.com/huydx/podcast</a>
 
 ### Usage
 To use, `go get` and `import` the package like your typical GoLang library.
 
-	$ go get -u github.com/eduncan911/podcast
+	$ go get -u github.com/huydx/podcast
 	
-	import "github.com/eduncan911/podcast"
+	import "github.com/huydx/podcast"
 
 The API exposes a number of method receivers on structs that implements the
 logic required to comply with the specifications and ensure a compliant feed.
@@ -25,7 +25,7 @@ Notably, the `Podcast.AddItem` function performs most
 of the heavy lifting by taking the `Item` input and performing
 validation, overrides and duplicate setters through the feed.
 
-Full detailed Examples of the API are at <a href="https://godoc.org/github.com/eduncan911/podcast">https://godoc.org/github.com/eduncan911/podcast</a>.
+Full detailed Examples of the API are at <a href="https://godoc.org/github.com/huydx/podcast">https://godoc.org/github.com/huydx/podcast</a>.
 
 ### Go Modules
 This library is supported on GoLang 1.7 and higher.
@@ -57,8 +57,8 @@ of the inputs.
 
 	go get -u github.com/dvyukov/go-fuzz/go-fuzz
 	go get -u github.com/dvyukov/go-fuzz/go-fuzz-build
-	go get -u github.com/eduncan911/podcast
-	cd $GOPATH/src/github.com/eduncan911/podcast
+	go get -u github.com/huydx/podcast
+	cd $GOPATH/src/github.com/huydx/podcast
 	go-fuzz-build
 	go-fuzz -func FuzzPodcastAddItem
 
@@ -175,15 +175,15 @@ Podcasts: <a href="https://help.apple.com/itc/podcasts_connect/#/itca5b22233">ht
 	
 	    // instantiate a new Podcast
 	    p := podcast.New(
-	        "eduncan911 Podcasts",
-	        "http://eduncan911.com/",
+	        "huydx Podcasts",
+	        "http://huydx.com/",
 	        "An example Podcast",
 	        &pubDate, &updatedDate,
 	    )
 	
 	    // add some channel properties
 	    p.AddAuthor("Jane Doe", "me@janedoe.com")
-	    p.AddAtomLink("http://eduncan911.com/feed.rss")
+	    p.AddAtomLink("http://huydx.com/feed.rss")
 	    p.AddImage("http://janedoe.com/i.jpg")
 	    p.AddSummary(`link <a href="http://example.com">example.com</a>`)
 	    p.IExplicit = "no"
@@ -232,20 +232,20 @@ Podcasts: <a href="https://help.apple.com/itc/podcasts_connect/#/itca5b22233">ht
 	// <?xml version="1.0" encoding="UTF-8"?>
 	// <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
 	//   <channel>
-	//     <title>eduncan911 Podcasts</title>
-	//     <link>http://eduncan911.com/</link>
+	//     <title>huydx Podcasts</title>
+	//     <link>http://huydx.com/</link>
 	//     <description>An example Podcast</description>
-	//     <generator>go podcast v1.3.1 (github.com/eduncan911/podcast)</generator>
+	//     <generator>go podcast v1.3.1 (github.com/huydx/podcast)</generator>
 	//     <language>en-us</language>
 	//     <lastBuildDate>Mon, 06 Feb 2017 08:21:52 +0000</lastBuildDate>
 	//     <managingEditor>me@janedoe.com (Jane Doe)</managingEditor>
 	//     <pubDate>Sat, 04 Feb 2017 08:21:52 +0000</pubDate>
 	//     <image>
 	//       <url>http://janedoe.com/i.jpg</url>
-	//       <title>eduncan911 Podcasts</title>
-	//       <link>http://eduncan911.com/</link>
+	//       <title>huydx Podcasts</title>
+	//       <link>http://huydx.com/</link>
 	//     </image>
-	//     <atom:link href="http://eduncan911.com/feed.rss" rel="self" type="application/rss+xml"></atom:link>
+	//     <atom:link href="http://huydx.com/feed.rss" rel="self" type="application/rss+xml"></atom:link>
 	//     <itunes:author>me@janedoe.com (Jane Doe)</itunes:author>
 	//     <itunes:summary><![CDATA[link <a href="http://example.com">example.com</a>]]></itunes:summary>
 	//     <itunes:image href="http://janedoe.com/i.jpg"></itunes:image>
@@ -333,7 +333,7 @@ Podcasts: <a href="https://help.apple.com/itc/podcasts_connect/#/itca5b22233">ht
 	//     <title>Sample Podcasts</title>
 	//     <link>http://example.com/</link>
 	//     <description>An example Podcast</description>
-	//     <generator>go podcast v1.3.1 (github.com/eduncan911/podcast)</generator>
+	//     <generator>go podcast v1.3.1 (github.com/huydx/podcast)</generator>
 	//     <language>en-us</language>
 	//     <lastBuildDate>Mon, 06 Feb 2017 08:21:52 +0000</lastBuildDate>
 	//     <managingEditor>jane.doe@example.com (Jane Doe)</managingEditor>
@@ -1168,8 +1168,8 @@ Bytes returns an encoded []byte slice.
 
 ```go
 p := podcast.New(
-	    "eduncan911 Podcasts",
-	    "http://eduncan911.com/",
+	    "huydx Podcasts",
+	    "http://huydx.com/",
 	    "An example Podcast",
 	    &pubDate, &updatedDate,
 	)
@@ -1203,18 +1203,18 @@ p := podcast.New(
 	// <?xml version="1.0" encoding="UTF-8"?>
 	// <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
 	//   <channel>
-	//     <title>eduncan911 Podcasts</title>
-	//     <link>http://eduncan911.com/</link>
+	//     <title>huydx Podcasts</title>
+	//     <link>http://huydx.com/</link>
 	//     <description>An example Podcast</description>
-	//     <generator>go podcast v1.3.1 (github.com/eduncan911/podcast)</generator>
+	//     <generator>go podcast v1.3.1 (github.com/huydx/podcast)</generator>
 	//     <language>en-us</language>
 	//     <lastBuildDate>Mon, 06 Feb 2017 08:21:52 +0000</lastBuildDate>
 	//     <managingEditor>me@janedoe.com (Jane Doe)</managingEditor>
 	//     <pubDate>Sat, 04 Feb 2017 08:21:52 +0000</pubDate>
 	//     <image>
 	//       <url>http://janedoe.com/i.jpg</url>
-	//       <title>eduncan911 Podcasts</title>
-	//       <link>http://eduncan911.com/</link>
+	//       <title>huydx Podcasts</title>
+	//       <link>http://huydx.com/</link>
 	//     </image>
 	//     <itunes:author>me@janedoe.com (Jane Doe)</itunes:author>
 	//     <itunes:summary><![CDATA[A very cool podcast with a long summary using Bytes()!
@@ -1271,4 +1271,4 @@ type TextInput struct {
 TextInput represents text inputs.
 
 - - -
-Generated by [godoc2ghmd](https://github.com/eduncan911/godoc2ghmd)
+Generated by [godoc2ghmd](https://github.com/huydx/godoc2ghmd)

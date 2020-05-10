@@ -2,7 +2,7 @@ on: [push]
 name: go-cicd
 
 # TODO: add go module publishing
-# maybe, curl https://sum.golang.org/lookup/github.com/eduncan911/podcast@v1.4.2
+# maybe, curl https://sum.golang.org/lookup/github.com/huydx/podcast@v1.4.2
 #
 
 jobs:

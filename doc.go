@@ -1,15 +1,15 @@
 // Package podcast generates a fully compliant iTunes and RSS 2.0 podcast feed
 // for GoLang using a simple API.
 //
-// Full documentation with detailed examples located at https://godoc.org/github.com/eduncan911/podcast
+// Full documentation with detailed examples located at https://godoc.org/github.com/huydx/podcast
 //
 // Usage
 //
 // To use, `go get` and `import` the package like your typical GoLang library.
 //
-//     $ go get -u github.com/eduncan911/podcast
+//     $ go get -u github.com/huydx/podcast
 //
-//     import "github.com/eduncan911/podcast"
+//     import "github.com/huydx/podcast"
 //
 // The API exposes a number of method receivers on structs that implements the
 // logic required to comply with the specifications and ensure a compliant feed.
@@ -19,7 +19,7 @@
 // of the heavy lifting by taking the `Item` input and performing
 // validation, overrides and duplicate setters through the feed.
 //
-// Full detailed Examples of the API are at https://godoc.org/github.com/eduncan911/podcast.
+// Full detailed Examples of the API are at https://godoc.org/github.com/huydx/podcast.
 //
 // Go Modules
 //
@@ -54,8 +54,8 @@
 //
 //   go get -u github.com/dvyukov/go-fuzz/go-fuzz
 //   go get -u github.com/dvyukov/go-fuzz/go-fuzz-build
-//   go get -u github.com/eduncan911/podcast
-//   cd $GOPATH/src/github.com/eduncan911/podcast
+//   go get -u github.com/huydx/podcast
+//   cd $GOPATH/src/github.com/huydx/podcast
 //   go-fuzz-build
 //   go-fuzz -func FuzzPodcastAddItem
 //
